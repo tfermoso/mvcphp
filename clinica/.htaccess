@@ -1,0 +1,6 @@
+Options +FollowSymlinks
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule ^([\w\d~%.:_\-]+)$ index.php?page=$1 [NC]
+RewriteRule ^([^/]+)(/([^/]+))?$ index.php?controller=$1&action=$3 [L]
